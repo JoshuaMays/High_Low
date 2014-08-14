@@ -2,6 +2,7 @@
 
 // Set random number from 1 - 100 for user to guess. Use mt_rand(), not rand().
 $answer = mt_rand(1,100);
+// Track the number of guesses.
 $number_of_guesses = 0;
 // Start do-while loop asking user to guess the $answer.
 do {
@@ -23,8 +24,10 @@ do {
 		// If $guess is lower than $answer tell user to guess higher.
 		fwrite(STDOUT, "HIGHER\n");
 	}
-} while ($guess != $answer); // Check if $guess is not equal to $answer, if true
-							 // run the loop again. If not, end the game. 
+  // Check if $guess is not equal to $answer, if true
+  // run the loop again. If not, end the game.	
+} while ($guess != $answer); 
+							  
 	// Output the number of guesses.
 	fwrite(STDOUT,"It took you $number_of_guesses guesses to figure it out.")
 ?>
