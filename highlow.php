@@ -1,13 +1,21 @@
 <?php
 
+fwrite(STDOUT, "Let's play Higher or Lower.\n");
+
 if ($argc == 3 && ( (is_numeric($argv[1]) && is_numeric($argv[2]) ) ) ) {
 	// If file is loaded with two arguments (one for low value, one for high value)
-	// set these arguments as the bounds of the random number generator.
+	// and both are numbers set these arguments as the bounds of the random
+	// number generator.
 	$answer = mt_rand($argv[1], $argv[2]);
+	
+	// Tell the user what the bounds of the game are.
+	fwrite(STDOUT, "We have chosen a number between $argv[1] and $argv[2].\n");
 }
 else {
 	// If there are no low and high arguments passed, create a random number.
 	$answer = mt_rand(1,100);
+	// Want to tell the user what the default bounds of the game are.
+	fwrite(STDOUT, "We have chosen a number between 1 and 100.\n");
 }
 
 // Track the number of guesses.
@@ -18,9 +26,9 @@ do {
 	// fwrite to stdout asking the user to guess.
 	fwrite(STDOUT, 'Guess? ');
 
-	// save user's guess with fgets(stdin) as $guess
+	// Save user's guess with fgets(stdin) as $guess
 	$guess = trim(fgets(STDIN));
-	// increment the number of guesses.
+	// Increment the number of guesses.
 	$number_of_guesses++;
 
 	if ($guess == $answer) {
@@ -36,8 +44,8 @@ do {
 		fwrite(STDOUT, "HIGHER\n");
 	}
 
-  // Check if $guess is not equal to $answer, if true
-  // run the loop again. If not, end the game.	
+  // Check if $guess is not equal to $answer, if true run the loop again.
+  // If not, end the game.	
 } while ($guess != $answer); 
 							  
 // Output the number of guesses.
