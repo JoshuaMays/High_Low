@@ -1,7 +1,7 @@
 <?php
 
-// Set random number from 1 - 100 for user to guess.
-$answer = rand(1,100);
+// Set random number from 1 - 100 for user to guess. Use mt_rand(), not rand().
+$answer = mt_rand(1,100);
 
 // Start do-while loop asking user to guess the $answer.
 do {
