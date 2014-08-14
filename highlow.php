@@ -28,7 +28,7 @@ do {
   // run the loop again. If not, end the game.	
 } while ($guess != $answer); 
 							  
-	// Output the number of guesses.
-	fwrite(STDOUT,"It took you $number_of_guesses guesses to figure it out.")
+// Output the number of guesses.
+fwrite(STDOUT,"It took you $number_of_guesses guesses to figure it out.")
 ?>
 
