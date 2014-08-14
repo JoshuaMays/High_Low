@@ -6,10 +6,12 @@ if ($argc == 3 && ( (is_numeric($argv[1]) && is_numeric($argv[2]) ) ) ) {
 	// If file is loaded with two arguments (one for low value, one for high value)
 	// and both are numbers set these arguments as the bounds of the random
 	// number generator.
-	$answer = mt_rand($argv[1], $argv[2]);
+	$min = $argv[1];
+	$max = $argv[2];
+	$answer = mt_rand($min, $max);
 	
 	// Tell the user what the bounds of the game are.
-	fwrite(STDOUT, "We have chosen a number between $argv[1] and $argv[2].\n");
+	fwrite(STDOUT, "We have chosen a number between $min and $max.\n");
 }
 else {
 	// If there are no low and high arguments passed, create a random number.
