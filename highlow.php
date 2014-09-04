@@ -11,13 +11,13 @@ if ($argc == 3 && ( (is_numeric($argv[1]) && is_numeric($argv[2]) ) ) ) {
 	$answer = mt_rand($min, $max);
 	
 	// Tell the user what the bounds of the game are.
-	fwrite(STDOUT, "We have chosen a number between $min and $max.\n");
+	fwrite(STDOUT, "We have chosen a number between $min and $max." . PHP_EOL);
 }
 else {
 	// If there are no low and high arguments passed, create a random number.
 	$answer = mt_rand(1,100);
 	// Want to tell the user what the default bounds of the game are.
-	fwrite(STDOUT, "We have chosen a number between 1 and 100.\n");
+	fwrite(STDOUT, "We have chosen a number between 1 and 100." . PHP_EOL);
 }
 
 // Track the number of guesses.
@@ -35,15 +35,15 @@ do {
 
 	if ($guess == $answer) {
 		// User's guess was correct, congratulate them.
-		fwrite(STDOUT, "GOOD GUESS!\n");
+		fwrite(STDOUT, "GOOD GUESS!" . PHP_EOL);
 	}
 	elseif ($guess > $answer) {
 		// If $guess is higher than $answer tell user to guess lower.
-		fwrite(STDOUT, "LOWER\n");
+		fwrite(STDOUT, "LOWER" . PHP_EOL);
 	}
 	else {
 		// If $guess is lower than $answer tell user to guess higher.
-		fwrite(STDOUT, "HIGHER\n");
+		fwrite(STDOUT, "HIGHER" . PHP_EOL);
 	}
 
   // Check if $guess is not equal to $answer, if true run the loop again.
@@ -51,7 +51,7 @@ do {
 } while ($guess != $answer); 
 							  
 // Output the number of guesses.
-fwrite(STDOUT,"It took you $number_of_guesses guesses to figure it out.")
+fwrite(STDOUT,"It took you $number_of_guesses guesses to figure it out.");
 
 ?>
 
